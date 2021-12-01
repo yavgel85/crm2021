@@ -1,0 +1,14 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+    level: 8
+    paths:
+        - app
+        - src
+    excludePaths:
+
+    checkMissingIterableValueType: false
+
+    universalObjectCratesClasses:
+    - Illuminate\Http\Resources\Json\JsonResource
