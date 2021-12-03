@@ -8,6 +8,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * App\Models\Contact
+ *
+ * @method static \Database\Factories\ContactFactory factory(...$parameters)
+ * @method static \Illuminate\Database\Eloquent\Builder|Contact newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Contact newQuery()
+ * @method static \Illuminate\Database\Query\Builder|Contact onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Contact query()
+ * @method static \Illuminate\Database\Query\Builder|Contact withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|Contact withoutTrashed()
+ * @mixin \Eloquent
+ */
 class Contact extends Model
 {
     use HasFactory, SoftDeletes;
