@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -8,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class JobTitle extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
 
     /**
      * @var string[]
@@ -16,6 +18,5 @@ class JobTitle extends Model
     protected $fillable = [
         'uuid',
         'name',
-        'department_id',
     ];
 }
