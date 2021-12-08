@@ -43,19 +43,20 @@ mysql: ## Run mysql
 redis: ## Run redis
 	docker exec -it $(PROJECT_NAME)_redis /bin/sh
 
-#docker-clear:
-#	docker container rm -f $(docker container ls -a -q) && docker image rm -f $(docker image ls -a -q)
+docker-clear: ## Clear containers and images
+	docker container rm -f $$(docker container ls -a -q) && \
+ 	docker image rm -f $$(docker image ls -a -q)
 
 docker-destroy: ## Destroy containers and images
 	-$(call destroy_containers,$(NAME))
-	-$(call destroy_images,$(NAME))
+	-$(call destroy_images)
 
 define destroy_containers
 	docker container rm --force `docker container ls --all --quiet --filter name=$(1)` 2>/dev/null
 endef
 
 define destroy_images
-	docker image rm --force `docker image ls --all --quiet $(1)` 2>/dev/null
+	docker image rm --force `docker image ls --all --quiet`
 endef
 
 # Error starting userland proxy: listen tcp4 0.0.0.0:443: bind: address already in use
